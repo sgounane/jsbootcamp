@@ -14,7 +14,16 @@ let chart=new Chart(ctx, {
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.01,
         pointRadius:0
-      }]
+      },
+      {
+        label: 'Active',
+        data: [],
+        fill: false,
+        borderColor: 'rgb(75, 192, 2)',
+        tension: 0.01,
+        pointRadius:0
+      }
+    ]
     }
   });
 
@@ -42,11 +51,13 @@ function updateChart(data){
     dataDiv.innerHTML=`
         <h3>${d1.Country}</h3>
         <div>Confirmed: ${d1.Confirmed}</div>
-        <div>Deaths: ${d1.Deaths}</div>`
+        <div>Active: ${d1.Active}</div>`
     const c=data.map(e=>e.Confirmed)
+    const m=data.map(e=>e.Active)
     const d=data.map(e=>new Date(e.Date).getDate())
     chart.data.labels=d;
     chart.data.datasets[0].data=c;
+    chart.data.datasets[1].data=m;
     chart.update();
 
 }
