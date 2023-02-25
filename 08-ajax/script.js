@@ -52,7 +52,3 @@ req.onreadystatechange=()=>{
 
 req.send()
 console.log("Fin!!!!!")
-
-
-
-gounane.said@gmail.com
