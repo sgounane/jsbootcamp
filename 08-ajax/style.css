@@ -20,11 +20,13 @@ div{
     height: 99%;
     overflow: scroll;
 }
-#dataDiv{
+#info{
     width: 68%;
-    height: 99%;
+}
+#dataDiv{
     overflow: scroll;
 }
+
 .cdiv{
     margin: 1px;
     background-color: rgb(194, 219, 194);

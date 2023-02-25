@@ -1,6 +1,23 @@
 let countriesDiv=document.querySelector("#countriesDiv")
 let dataDiv=document.querySelector("#dataDiv")
+const ctx = document.getElementById('myChart');
 let req=new XMLHttpRequest()
+
+let chart=new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [],
+      datasets: [{
+        label: 'Confirmed',
+        data: [],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.01,
+        pointRadius:0
+      }]
+    }
+  });
+
 //req.open("GET","https://api.covid19api.com/dayone/country/MA")
 req.open("GET","https://api.covid19api.com/countries")
 function updateData(e){
@@ -21,13 +38,17 @@ function updateData(e){
 
 }
 function updateChart(data){
-    d=data[data.length-1]
-    console.log(d)
+    d1=data[data.length-1]
     dataDiv.innerHTML=`
-        <h3>${d.Country}</h3>
-        <div>Confirmed: ${d.Confirmed}</div>
-        <div>Deaths: ${d.Deaths}</div>
-    `
+        <h3>${d1.Country}</h3>
+        <div>Confirmed: ${d1.Confirmed}</div>
+        <div>Deaths: ${d1.Deaths}</div>`
+    const c=data.map(e=>e.Confirmed)
+    const d=data.map(e=>new Date(e.Date).getDate())
+    chart.data.labels=d;
+    chart.data.datasets[0].data=c;
+    chart.update();
+
 }
 function setConutries(data){
     data.forEach(e => {
