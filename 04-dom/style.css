@@ -1,0 +1,16 @@
+#root{
+    display: flex;
+    flex-wrap: wrap
+}
+.box{
+    border: 1px solid black;
+    padding: 10px;
+   margin: 4px;
+   align-content: center;
+}
+img{
+    width: 40px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 6px 0px gray;
+}
