@@ -1,0 +1,35 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+div{
+    border: 1px solid black;
+    pad: 2px;
+    margin: 2px;
+}
+#root{
+    display: flex;
+    width: 80%;
+    height: 80%;
+}
+#countriesDiv{
+    width: 30%;
+    height: 99%;
+    overflow: scroll;
+}
+#dataDiv{
+    width: 68%;
+    height: 99%;
+    overflow: scroll;
+}
+.cdiv{
+    margin: 1px;
+    background-color: rgb(194, 219, 194);
+}
+.cdiv:hover{
+    cursor: pointer;
+    background-color: rgb(162, 195, 162);
+}

@@ -12,7 +12,7 @@ function updateclock(){
     let hs=d.getHours()
     s.setAttribute("transform","rotate("+sc*u+")")
     m.setAttribute("transform","rotate("+ms*u+")")
-    h.setAttribute("transform","rotate("+uh*hs+")")
+    h.setAttribute("transform","rotate("+uh*hs/36+")")
 }
 
 let I=setInterval(updateclock,1000)
